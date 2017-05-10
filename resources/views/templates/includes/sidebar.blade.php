@@ -27,7 +27,7 @@
             @else
             @endif
             <li class="treeview">
-                <a href="#">
+                <a href="{{route('palestra.index')}}">
                     <i class="fa fa-comments"></i><span>Palestras</span>
                 </a>
             </li>

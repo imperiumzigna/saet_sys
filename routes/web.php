@@ -48,3 +48,13 @@ Route::group(['prefix' => 'minicursos'], function () {
     Route::put('/edit/{id}', 'MinicursoController@putEdit')->name('minicurso.putEdit');
     Route::delete('/delete', 'MinicursoController@delete')->name('minicurso.delete');
 });
+
+Route::group(['prefix' => 'palestras'], function () {
+    Route::get('/', 'PalestraController@index')->name('palestra.index');
+    Route::get('/profile/{id}', 'PalestraController@getProfile')->name('palestra.profile');
+    Route::get('/create', 'PalestraController@getCreate')->name('palestra.getCreate');
+    Route::post('/create', 'PalestraController@postCreate')->name('palestra.postCreate');
+    Route::get('/edit/{id}', 'PalestraController@getEdit')->name('palestra.getEdit');
+    Route::put('/edit/{id}', 'PalestraController@putEdit')->name('palestra.putEdit');
+    Route::delete('/delete', 'PalestraController@delete')->name('palestra.delete');
+});

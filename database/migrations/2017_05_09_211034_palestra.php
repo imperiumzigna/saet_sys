@@ -17,7 +17,7 @@ class Palestra extends Migration
             $table->increments('id');
             $table->string('titulo',255);
             $table->longText('descricao')->nullable();
-            $table->dateTime('cronograma');
+            $table->string('cronograma');
             $table->string('area');
             $table->string('professor');
             $table->string('criador');
