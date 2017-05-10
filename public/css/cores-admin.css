@@ -1,0 +1,46 @@
+.skin-blue .main-header .navbar {
+    background-color: #DB393F;
+}
+
+.skin-blue .main-header .logo {
+    background-color: #D9292F;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+}
+
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
+    background-color: #fff;
+}
+
+.skin-blue .sidebar a {
+    color: #000;
+}
+
+
+.content-wrapper, .right-side {
+    background-color: #EFF2F6;
+}
+
+.main-footer {
+    background: #6A85BD;
+    padding: 15px;
+    color: #fff;
+    border-top: 1px solid #d2d6de;
+}
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+    background-color: #367fa9;
+}
+
+
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+    color: #FFFFFF;
+    background: rgba(0,0,0,0.1);
+}
+
+.box.box-primary {
+    border-top-color: #DB3539;
+}
+
+.skin-blue .user-panel>.info, .skin-blue .user-panel>.info>a {
+    color: #000;
+}
