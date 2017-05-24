@@ -1,8 +1,10 @@
 @extends('templates.base')
 @section('Button')
+    @if( Auth::user()->usr_papel == "admin"|| Auth::user()->usr_papel == "professor")
     <form method="get" action="{{ route('minicurso.getCreate') }}">
         <button type="submit" class="btn btn-flat bg-green"><i class="fa fa-plus"></i> Adicionar Minicursos</button>
     </form>
+    @endif
 @endsection
 
 @section('Content')
@@ -11,7 +13,7 @@
             <div class="box box-primary">
                 <div class="box-body">
                     <div class="box-body no-padding">
-                        @if($minicursos->count())
+                        @if($minicursos->count() )
                             <div class="box-body table-responsive no-padding">
                                 <table class="table table-bordered">
                                     <thead>
@@ -36,7 +38,7 @@
                                             <td>{{ $minicurso->professor }}</td>
                                             <td>{{ $minicurso->criador }}</td>
                                             <td>{{ $minicurso->created_at }}</td>
-
+                                           @if( Auth::user()->usr_papel == "admin"|| Auth::user()->usr_papel == "professor")
                                                 <td class="form-inline">
                                                     <div class="form-group">
                                                         <form method="get"
@@ -63,7 +65,21 @@
                                                         </form>
                                                     </div>
                                                 </td>
-
+                                               @else
+                                                <td class="form-inline">
+                                                    <div class="form-group">
+                                                        <form method="get"
+                                                              action="{{ route('minicurso.inscricao', ['id' => $minicurso->id,'user'=>Auth::user()->id]) }}"
+                                                              role="form"
+                                                              id="form-edit">
+                                                            <button type="submit" class="btn bg-green btn-sm">
+                                                                <i class="fa fa-id-card"></i> Inscrição
+                                                            </button>
+                                                            {{csrf_field()}}
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                               @endif
                                         </tr>
                                     @endforeach
                                     </tbody>

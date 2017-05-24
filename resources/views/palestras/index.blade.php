@@ -1,8 +1,10 @@
 @extends('templates.base')
 @section('Button')
+    @if( Auth::user()->usr_papel == "admin"|| Auth::user()->usr_papel == "professor")
     <form method="get" action="{{ route('palestra.getCreate') }}">
         <button type="submit" class="btn btn-flat bg-green"><i class="fa fa-plus"></i> Adicionar palestras</button>
     </form>
+    @endif
 @endsection
 
 @section('Content')
@@ -37,6 +39,7 @@
                                             <td>{{ $palestra->criador }}</td>
                                             <td>{{ $palestra->created_at }}</td>
 
+                                            @if( Auth::user()->usr_papel == "admin"|| Auth::user()->usr_papel == "professor")
                                                 <td class="form-inline">
                                                     <div class="form-group">
                                                         <form method="get"
@@ -63,7 +66,21 @@
                                                         </form>
                                                     </div>
                                                 </td>
-
+                                            @else
+                                                <td class="form-inline">
+                                                    <div class="form-group">
+                                                        <form method="get"
+                                                              action="{{ route('palestra.inscricao', ['id' => $palestra->id]) }}"
+                                                              role="form"
+                                                              id="form-edit">
+                                                            <button type="submit" class="btn bg-green btn-sm">
+                                                                <i class="fa fa-id-card-o"></i> Inscrição
+                                                            </button>
+                                                            {{csrf_field()}}
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            @endif
                                         </tr>
                                     @endforeach
                                     </tbody>

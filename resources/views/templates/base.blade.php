@@ -42,7 +42,7 @@
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li class="user-body">
-                                    <a href="{{ route('user.profile', ['id' => Auth::user()->usr_id]) }}">
+                                    <a href="{{ route('user.index', ['id' => Auth::user()->usr_id]) }}">
                                         <i class="fa fa-dashboard"></i> Dashboard
                                     </a>
                                     <a href="{{ url('/logout') }}" onclick="event.preventDefault();

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\InscricaoRepository;
 use Illuminate\Http\Request;
 use App\Repositories\MinicursoRepository;
 use App\Http\Requests\MinicursoRequest;
@@ -10,12 +11,14 @@ class MinicursoController extends Controller
 {
 
     protected $minicursoRepository;
-
-    public function __construct(MinicursoRepository $minicursoRepository)
+    protected $inscricaoRepository;
+    public function __construct(MinicursoRepository $minicursoRepository, InscricaoRepository $inscricaoRepository)
     {
 
         $this->middleware('auth');
         $this->minicursoRepository = $minicursoRepository;
+        $this->inscricaoRepository = $inscricaoRepository;
+
     }
 
     public function index()
@@ -90,4 +93,18 @@ class MinicursoController extends Controller
 
     }
 
+    public function inscricao($id, Request $request )
+    {
+        try{
+            $this->inscricaoRepository->create(['user'=> intval(Auth::user()->id), 'palestra'=>intval($id),'tipo'=>"minicurso"]);
+
+            return redirect(route('palestra.index'));
+        }catch (Exception $e){
+            if (env('APP_DEBUG') == true) {
+                throw $e;
+            }
+            return redirect()->back();
+
+        }
+    }
 }

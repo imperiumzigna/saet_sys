@@ -19,12 +19,13 @@
                         <i class="fa fa-users"></i><span>Usuários</span>
                     </a>
                 </li>
+            @endif
+            @if(Auth::user()->usr_papel == "admin" || Auth::user()->usr_papel == "professor")
                 <li class="treeview">
                     <a href="{{route('noticia.index')}}">
                         <i class="fa fa-sticky-note"></i><span>Notícias e Avisos</span>
                     </a>
                 </li>
-            @else
             @endif
             <li class="treeview">
                 <a href="{{route('palestra.index')}}">

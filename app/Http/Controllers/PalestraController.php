@@ -5,17 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\PalestraRepository;
 use App\Http\Requests\PalestraRequest;
+use Auth;
+use App\Repositories\InscricaoRepository;
+use Mockery\Exception;
 
 class PalestraController extends Controller
 {
 
     protected $palestraRepository;
+    protected $inscricaoRepository;
 
-    public function __construct(PalestraRepository $palestraRepository)
+    public function __construct(PalestraRepository $palestraRepository, InscricaoRepository $inscricaoRepository)
     {
 
         $this->middleware('auth');
         $this->palestraRepository = $palestraRepository;
+        $this->inscricaoRepository = $inscricaoRepository;
     }
 
     public function index()
@@ -90,4 +95,18 @@ class PalestraController extends Controller
 
     }
 
+    public function inscricao($id, Request $request )
+    {
+        try{
+        $this->inscricaoRepository->create(['user'=> intval(Auth::user()->id), 'palestra'=>intval($id),'tipo'=>"palestra"]);
+
+            return redirect(route('palestra.index'));
+        }catch (Exception $e){
+            if (env('APP_DEBUG') == true) {
+                throw $e;
+            }
+            return redirect()->back();
+
+        }
+    }
 }

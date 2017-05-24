@@ -47,6 +47,7 @@ Route::group(['prefix' => 'minicursos'], function () {
     Route::get('/edit/{id}', 'MinicursoController@getEdit')->name('minicurso.getEdit');
     Route::put('/edit/{id}', 'MinicursoController@putEdit')->name('minicurso.putEdit');
     Route::delete('/delete', 'MinicursoController@delete')->name('minicurso.delete');
+    Route::get('/{id}/inscricao', 'MinicursoController@inscricao')->name('minicurso.inscricao');
 });
 
 Route::group(['prefix' => 'palestras'], function () {
@@ -57,4 +58,5 @@ Route::group(['prefix' => 'palestras'], function () {
     Route::get('/edit/{id}', 'PalestraController@getEdit')->name('palestra.getEdit');
     Route::put('/edit/{id}', 'PalestraController@putEdit')->name('palestra.putEdit');
     Route::delete('/delete', 'PalestraController@delete')->name('palestra.delete');
+    Route::get('/{id}/inscricao', 'PalestraController@inscricao')->name('palestra.inscricao');
 });
