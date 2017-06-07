@@ -83,6 +83,14 @@ body {
     cursor: pointer;
 }
 
+.login-block a {
+    width: 100%;
+}
+
+.form-group {
+    margin: 1%;
+}
+
 .login-block button:hover {
     background: #0076D1;
 }

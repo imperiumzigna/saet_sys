@@ -9,7 +9,7 @@
 
             <li class="treeview">
                 <a href="{{route('home')}}">
-                    <i class="fa fa-dashboard"></i><span>Painel de controle</span>
+                    <i class="fa fa-dashboard"></i><span>Painel de notícias</span>
                 </a>
             </li>
 

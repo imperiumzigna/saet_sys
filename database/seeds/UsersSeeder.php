@@ -16,25 +16,25 @@ class UsersSeeder extends Seeder
         $user->usr_name = "Igor";
         $user->usr_email = "admin@admin.com";
         $user->usr_papel = "admin";
-        $user->cpf = "8975938475";
+        $user->cpf = "89759384752";
         $user->password = bcrypt('123456');
         $user->save();
 
 
         $user = new User();
-        $user->usr_name = "Teste";
+        $user->usr_name = "Luiz Ricardo Ripardo";
         $user->usr_email = "teste@teste.com";
         $user->usr_papel = "professor";
-        $user->cpf = "342344545";
+        $user->cpf = "34234454521";
         $user->password = bcrypt('123456');
         $user->save();
 
 
         $user = new User();
-        $user->usr_name = "Visitante";
+        $user->usr_name = "Cristiano Ronaldo";
         $user->usr_email = "visitante@visitante.com";
         $user->usr_papel = "visitante";
-        $user->cpf = "354568045";
+        $user->cpf = "35456804512";
         $user->password = bcrypt('visitante');
         $user->save();
     }

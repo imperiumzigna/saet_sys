@@ -25,7 +25,7 @@
 
                     <li class="dropdown messages-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bell-o"></i>
+                            
                             <span class="label label-warning alert-counter"></span>
                         </a>
                         <ul class="dropdown-menu alerts-dropdown">
@@ -42,8 +42,8 @@
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li class="user-body">
-                                    <a href="{{ route('user.index', ['id' => Auth::user()->usr_id]) }}">
-                                        <i class="fa fa-dashboard"></i> Dashboard
+                                    <a href="{{ url('/home') }}">
+                                        <i class="fa fa-dashboard"></i> Painel de notícias
                                     </a>
                                     <a href="{{ url('/logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
