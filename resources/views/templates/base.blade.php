@@ -45,6 +45,10 @@
                                     <a href="{{ url('/home') }}">
                                         <i class="fa fa-dashboard"></i> Painel de notícias
                                     </a>
+                                    <a href="{{ url('/usuario') }}">
+                                        <i class="fa fa-user"></i> Minhas inscrições
+                                    </a>
+
                                     <a href="{{ url('/logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                                         <i class="fa fa-sign-out"></i> Logout
@@ -58,7 +62,6 @@
                             </ul>
                         </li>
                         @endif
-                        </li>
                 </ul>
             </div>
         </nav>

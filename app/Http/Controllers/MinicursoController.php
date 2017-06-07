@@ -6,6 +6,7 @@ use App\Repositories\InscricaoRepository;
 use Illuminate\Http\Request;
 use App\Repositories\MinicursoRepository;
 use App\Http\Requests\MinicursoRequest;
+use Auth;
 
 class MinicursoController extends Controller
 {
@@ -98,7 +99,7 @@ class MinicursoController extends Controller
         try{
             $this->inscricaoRepository->create(['user'=> intval(Auth::user()->id), 'palestra'=>intval($id),'tipo'=>"minicurso"]);
 
-            return redirect(route('palestra.index'));
+            return redirect(route('minicurso.index'));
         }catch (Exception $e){
             if (env('APP_DEBUG') == true) {
                 throw $e;
