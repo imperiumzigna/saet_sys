@@ -15,7 +15,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'usr_name','cpf', 'usr_email', 'password','usr_papel'
+        'usr_name' =>'required',
+        'cpf' =>'required',
+        'usr_email'=>'required',
+        'password'=>'required',
+        'usr_papel'=>'required'
     ];
 
     /**
@@ -26,4 +30,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
         'cpf'];
+
+
+    public function minicurso()
+    {
+        return $this->hasMany('App\Models\MinicursoModel');
+    }
+
+    public function palestra()
+    {
+        return $this->hasMany('App\Models\PalestraModel');
+    }
 }

@@ -32,4 +32,10 @@ class MinicursoModel extends BaseModel
     protected $hidden = [
 
     ];
+
+
+    public function user()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\NoticiaRepository;
+use Auth;
+
 
 class HomeController extends Controller
 {
@@ -30,7 +32,7 @@ class HomeController extends Controller
     {
         $noticias = $this->noticiaRepository->all();
 
-        return view('templates.home',['user'=>$this->userRepository,
+        return view('templates.home',['user'=> Auth::user()->usr_nome,
                                             'noticias'=>$noticias]);
     }
 }

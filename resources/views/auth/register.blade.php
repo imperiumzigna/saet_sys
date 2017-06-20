@@ -53,7 +53,7 @@
                         <select name="usr_papel" class="form-control">
                             <option value="visitante">Visitante</option>
                             <option value="professor">Professor</option>
-                            <option value="admin">Admin</option>
+
                         </select>
                     </div>
                     <div class="form-group has-feedback">

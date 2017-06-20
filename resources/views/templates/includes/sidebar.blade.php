@@ -15,7 +15,13 @@
 
             @if(Auth::user()->usr_papel == "admin")
                 <li class="treeview">
-                    <a href="#">
+                    <a href="{{route('admin.index')}}">
+                        <i class="fa fa-users"></i><span>Usuários</span>
+                    </a>
+                </li>
+            @else
+                <li class="treeview">
+                    <a href="{{route('user.index')}}">
                         <i class="fa fa-users"></i><span>Usuários</span>
                     </a>
                 </li>

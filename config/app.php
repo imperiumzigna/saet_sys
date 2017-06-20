@@ -177,7 +177,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Stevebauman\EloquentTable\EloquentTableServiceProvider::class,
-
+        Artdarek\Toastr\Providers\ToastrServiceProvider::class
 
     ],
 
@@ -229,6 +229,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'HTML' => Collective\Html\HtmlFacade::class,
+        'Toastr'    => Artdarek\Toastr\Facades\Toastr::class
     ],
 
 ];
