@@ -23,7 +23,7 @@ class Seguranca
             }
         }
 
-        Toastr::error('Você não tem permissão para acessar este recurso. Contate o Administrador do Sistema.');
+        Toastr::error('Você não tem permissão para acessar este recurso. Contate o Administrador do Sistema.')->push();
         return redirect()->back();
     }
 }
