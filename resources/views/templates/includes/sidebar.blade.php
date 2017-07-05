@@ -19,6 +19,11 @@
                         <i class="fa fa-users"></i><span>Usuários</span>
                     </a>
                 </li>
+                <li class="treeview">
+                    <a href="{{route('pages.admin')}}">
+                        <i class="fa fa-file-text-o"></i><span>Páginas</span>
+                    </a>
+                </li>
             @else
                 <li class="treeview">
                     <a href="{{route('user.index')}}">

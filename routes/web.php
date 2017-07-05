@@ -14,12 +14,19 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', 'HomeController@index')->name('home');
 
-Auth::routes();
+
+Route::get('/','PagesController@index')->name('pages.index');
+Route::get('/pages','PagesController@adminIndex')->name('pages.admin');
+Route::get('/profile/{id}', 'PagesController@getProfile')->name('pages.profile')->middleware('seguranca');
+Route::get('/create', 'PagesController@getCreate')->name('pages.getCreate')->middleware('seguranca');
+Route::post('/create', 'PagesController@postCreate')->name('pages.postCreate')->middleware('seguranca');
+Route::get('/edit/{id}', 'PagesController@getEdit')->name('pages.getEdit')->middleware('seguranca');
+Route::put('/edit/{id}', 'PagesController@putEdit')->name('pages.putEdit')->middleware('seguranca');
+Route::delete('/delete', 'PagesController@delete')->name('pages.delete')->middleware('seguranca');
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Auth::routes();
 Route::group(['prefix' => 'usuario'], function () {
     Route::get('/', 'UserController@index')->name('user.index');
     Route::get('/profile/{id}', 'UserController@getProfile')->name('user.profile');
